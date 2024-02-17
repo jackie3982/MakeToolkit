@@ -10,8 +10,10 @@
 CC=g++
 CFLAGS=-g -Wall -Wextra
 ##compiles while outputing any errors and/or warnings
+TARGET = employee
+all: $(TARGET)
 
-employee: Employee.o main.o Officer.o Supervisor.o
+$(TARGET): Employee.o main.o Officer.o Supervisor.o
 	$(CC) $(CFLAGS) -o employee Employee.o main.o Officer.o Supervisor.o
 
 Employee.o: Employee.cpp Employee.h 
